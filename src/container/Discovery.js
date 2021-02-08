@@ -25,25 +25,27 @@ class Discovery extends React.Component {
 
     this.handleTotalIngredients();
   }
-  
-  handleTotalIngredients = () => {
-    const burgerIngredientsObject = { ...this.state.burgerIngredients }
-    const ingredientsCountArray = Object.keys(burgerIngredientsObject).map(ingredient => {
-      return burgerIngredientsObject[ingredient]
-    });
-    const updatedTotalIngredientsCount = ingredientsCountArray.reduce( (sum, item) => { return sum + item }, 0 )
 
-    this.setState({ totalIngredientsCount: updatedTotalIngredientsCount })
+  handleTotalIngredients = () => {
+      this.setState( prevState => {
+        const prevBurgerIngredients = prevState.burgerIngredients;
+        const ingredientsArray = Object.keys(prevBurgerIngredients).map(ingredient => {
+          return prevBurgerIngredients[ingredient]
+        });
+        const totalIngredientCount = ingredientsArray.reduce( (sum, item) => { return sum + item }, 0 )
+      return { totalIngredientsCount: totalIngredientCount }
+    })
+        
   }
-  
+
   render() {
     return (
       <div>
         <button name="bun" onClick={(event) => this.handleAddIngredients(event.target.name)} >Bun: {this.state.burgerIngredients.bun}</button>
         <button name="meat" onClick={(event) => this.handleAddIngredients(event.target.name)} >Meat: {this.state.burgerIngredients.meat}</button>
-        <button name="lettuce" onClick={(event) => this.handleAddIngredients(event.target.name)} >lettuce: {this.state.burgerIngredients.lettuce}</button>
-        <button name="onion" onClick={(event) => this.handleAddIngredients(event.target.name)} >onion: {this.state.burgerIngredients.onion}</button>
-        <button name="cheese" onClick={(event) => this.handleAddIngredients(event.target.name)} >cheese: {this.state.burgerIngredients.cheese}</button>
+        <button name="lettuce" onClick={(event) => this.handleAddIngredients(event.target.name)} >Lettuce: {this.state.burgerIngredients.lettuce}</button>
+        <button name="onion" onClick={(event) => this.handleAddIngredients(event.target.name)} >Onion: {this.state.burgerIngredients.onion}</button>
+        <button name="cheese" onClick={(event) => this.handleAddIngredients(event.target.name)} >Cheese: {this.state.burgerIngredients.cheese}</button>
         <h4>Total Burger Ingredients: {this.state.totalIngredientsCount}</h4>
       </div>
     )
@@ -55,28 +57,23 @@ export default Discovery;
 
 
 
+// handleTotalIngredients = () => {
+//   const burgerIngredientsObject = { ...this.state.burgerIngredients }
+//   const ingredientsCountArray = Object.keys(burgerIngredientsObject).map(ingredient => {
+//     return burgerIngredientsObject[ingredient]
+//   });
+//   const updatedTotalIngredientsCount = ingredientsCountArray.reduce( (sum, item) => { return sum + item }, 0 )
 
-  // handleTotalIngredients = (burgerIngredients) => {
-  //   const ingredientsArray = Object.keys(burgerIngredients).map(ingredient => {
-  //     return burgerIngredients[ingredient]
-  //   });
-  //   const totalIngredientCount = ingredientsArray.reduce( (sum, item) => { return sum + item }, 0 )
+//   this.setState({ totalIngredientsCount: updatedTotalIngredientsCount })
+// }
 
-  //   this.setState({ totalIngredients: totalIngredientCount })
-  // }
+// handleTotalIngredients = (burgerIngredients) => {
+//   const ingredientsArray = Object.keys(burgerIngredients).map(ingredient => {
+//     return burgerIngredients[ingredient]
+//   });
+//   const updatedTotalIngredientCount = ingredientsArray.reduce( (sum, item) => { return sum + item }, 0 )
 
-  // handleTotalIngredients = () => {
-    
-  //   this.setState( prevState => {
-  //     const prevBurgerIngredients = prevState.burgerIngredients;
+//   this.setState({ totalIngredientsCount: updatedTotalIngredientCount })
+// }
 
-  //     const ingredientsArray = Object.keys(prevBurgerIngredients).map(ingredient => {
-  //       return prevBurgerIngredients[ingredient]
-  //     });
-  //     const totalIngredientCount = ingredientsArray.reduce( (sum, item) => { return sum + item }, 0 )
 
-  //     return { totalIngredients: totalIngredientCount }
-
-  //   })
-        
-  // }
