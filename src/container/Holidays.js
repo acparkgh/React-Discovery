@@ -45,6 +45,7 @@ class Holidays extends Component {
      <tr><Holiday holiday={holiday} /></tr>
     );
    });
+   console.log(holidayTable)
    return (
     <table>{holidayTable}</table>
    );
