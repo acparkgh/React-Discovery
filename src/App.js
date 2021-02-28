@@ -4,13 +4,15 @@ import './App.css';
 // import Holidays from './container/Holidays';
 
 
-import ReactRouter from './container/ReactRouter';
+// import ReactRouter from './container/ReactRouter';
 import { BrowserRouter } from 'react-router-dom';
+import InventoryList from './component/InventoryList';
 
 function App() {
   return (
     <BrowserRouter>
-      <ReactRouter />
+      {/* <ReactRouter /> */}
+      <InventoryList />
     </BrowserRouter> 
   );
 }
