@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class InventoryList extends React.Component {
 
   // state = {
@@ -52,6 +53,9 @@ class InventoryList extends React.Component {
     pencil: 15,
     eraser: 20,
   }
+
+  
+  
   handleInputChange = (event) => {
     // let item = event.target.name;
     // let count = event.target.value;

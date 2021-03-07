@@ -16,6 +16,8 @@ class Discovery extends React.Component {
     }
   }
 
+
+  
   handleAddIngredients = (ingredient) => {
     const newIngredientCount = this.state.burgerIngredients[ingredient] + 1;
     const updatedBurgerIngredient = { ...this.state.burgerIngredients };
