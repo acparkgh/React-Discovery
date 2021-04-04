@@ -30,10 +30,7 @@ class Count extends React.Component {
       </div>
     );
   };
+
 };
   
-  export default Count;
-  
-  
-  
-  {/* <button onClick={this.handleAddCount(inputValue)} > */}
+export default Count;
