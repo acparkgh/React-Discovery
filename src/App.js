@@ -8,15 +8,20 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import InventoryList from './component/InventoryList';
 import Count from './component/Count.js';
+import Constant from './component/constant';
+import Function from './component/function';
+
 
 function App() {
   return (
     <BrowserRouter>
       {/* <ReactRouter /> */}
       {/* <InventoryList /> */}
-      <Count />
+      {/* <Count /> */}
+      <Constant />
+      <Function />
     </BrowserRouter> 
   );
-}
+}  
 
 export default App;
